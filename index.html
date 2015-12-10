@@ -24,12 +24,14 @@
 
      ga('create', tbb_ga, {'allowLinker': true});
      ga('require', 'linker');
+     // Add linker params to all links to TheBookingButton (Links in iframe will not be appended with linker params so we still be to hit ga_proxy ptah) 
+     // if ga_proxy is added to the exclusiong list then the referral will be the URL before this page (hotel website) but if not the referral of booking page will be hotel webpage.
      ga('linker:autoLink', [tbb_domain]);
      ga('send', 'pageview');
 
      ga(function(tracker) {
-        window.linker = window.linker || new window.gaplugins.Linker(tracker);
-       if(document.referrer.indexOf(document.domain)!=7) {
+       window.linker = window.linker || new window.gaplugins.Linker(tracker);
+       if (document.referrer.indexOf(document.domain)!=7) {
          var e = document.createElement('iframe');
          e.src = window.linker.decorate('//'+tbb_domain+'/'+tbb_cid+'/ga_proxy');
          e.setAttribute('style', 'display:none');
