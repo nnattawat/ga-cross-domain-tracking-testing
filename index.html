@@ -10,6 +10,7 @@
   </head>
   <body>
     <iframe src="https://www.thebookingbutton.co.uk/demotest/properties/lhtest/widget" width="100%" height="500px" frameborder="0"></iframe>
+    <a href="https://www.thebookingbutton.co.uk/demotest/properties/lhtest">TBB SITE</a>
     <script src="./assets/javascripts/jquery-2.1.4.min.js"></script>
     <script type="text/javascript">
 
@@ -24,8 +25,8 @@
 
      ga('create', tbb_ga, {'allowLinker': true});
      ga('require', 'linker');
-     // Add linker params to all links to TheBookingButton (Links in iframe will not be appended with linker params so we still be to hit ga_proxy ptah) 
-     // if ga_proxy is added to the exclusiong list then the referral will be the URL before this page (hotel website) but if not the referral of booking page will be hotel webpage.
+     // Add linker params to all links to TheBookingButton (Links in iframe will not be appended with linker params so we still be to hit ga_proxy path)
+     // if ga_proxy is added to the exclusion list then the referral will be the URL before this page (hotel website) but if not the referral of booking page will be hotel webpage.
      ga('linker:autoLink', [tbb_domain]);
      ga('send', 'pageview');
 
